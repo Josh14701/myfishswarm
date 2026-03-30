@@ -212,7 +212,7 @@ def generate_ontology():
         logger.info(f"文本提取完成，共 {len(all_text)} 字符")
         
         # 生成本体
-        logger.info("调用 LLM 生成本体定义...")
+        logger.info(f"调用 LLM 生成本体定义... BASE_URL={Config.LLM_BASE_URL}, MODEL={Config.LLM_MODEL_NAME}, KEY={Config.LLM_API_KEY[:8] if Config.LLM_API_KEY else 'NONE'}...")
         generator = OntologyGenerator()
         ontology = generator.generate(
             document_texts=document_texts,
